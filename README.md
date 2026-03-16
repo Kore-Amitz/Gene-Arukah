@@ -54,3 +54,32 @@ You can use the web-based tool directly here:
 [https://kore-amitz.github.io/Gene-Arukah/](https://kore-amitz.github.io/Gene-Arukah/)
 
 ---
+
+## Quick Start
+
+- Enter a sequence – Type or paste DNA/RNA (e.g., ATGCGATCG) or protein sequence
+
+- Choose sound texture – Select from Pad, Bowl, Flute, or Harp
+
+- Adjust controls – Tempo, Reverb, Volume, Mutation
+
+- Press BEGIN – Listen to your genetic melody
+
+## This web tool is part of a hypothesis of my ongoing research
+
+## Current Status: v1.0.0
+
+
+## 🤝 Contributing
+As this is an ongoing research project, contributions are welcome in:
+- 💻 Code development – Bug fixes, performance improvements
+- 🎵 Sound design – New instrument textures
+
+## 📄 License
+This project is licensed under the MIT License – see the LICENSE file for details.
+
+## 📬 Contact
+For collaboration, questions, or feedback:
+- Email: ismielabir286@gmail.com
+- GitHub: @ismielabir
+- LinkedIn: https://www.linkedin.com/in/md-ismiel-hossen-abir/
