@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sequence Sonata Pro - Transform DNA, RNA, and protein sequences into beautiful music. Generate melodies, compare sequences, and download audio files.">
+  <meta name="keywords" content="DNA music, bioinformatics, sequence sonification, audio rendering, MIDI export, spectrogram, bioinformatics tool">
+  <meta name="author" content="Sequence Sonata">
+  <meta property="og:title" content="Sequence Sonata Pro - Turn Genetic Code into Music">
+  <meta property="og:description" content="Transform DNA, RNA, and protein sequences into beautiful melodies. Compare sequences, generate audio, and explore genetic music.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1532187863486-abf9dbad1b1a?w=1200">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sequence Sonata Pro">
+  <meta name="twitter:description" content="Turn genetic sequences into music">
+  <title>Sequence Sonata Pro - Turn DNA into Music | Bioinformatics Audio Tool</title>
+  <link rel="canonical" href="https://sequencesonata.pro">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <div class="aurora"></div>
+  <div class="toast" id="toast">Ready</div>
+
+  <div class="app">
+    <header>
+      <div><span class="brand">🧬 Gene Arukah</span></div>
+      <div class="pill" id="pill"><div class="dot"></div><span id="pill-txt">IDLE</span></div>
+    </header>
+
+    <div class="tabs">
+      <button class="tab on" onclick="window.switchTab('play',this)"><span>🎵</span> PLAY</button>
+      <button class="tab" onclick="window.switchTab('downloads',this)"><span>⬇️</span> DOWNLOADS</button>
+      <button class="tab" onclick="window.switchTab('compare',this)"><span>🔄</span> COMPARE</button>
+      <button class="tab" onclick="window.switchTab('autogen',this)"><span>✨</span> AUTO GENERATE</button>
+    </div>
+
+    <div class="panels">
+      <div class="panel on" id="p-play">
+        <div class="col col-l">
+          <div class="card">
+            <span class="clabel">🔤 ENTER SEQUENCE</span>
+            <textarea id="seq-input" placeholder="e.g. ATGCGATCG or MKTAYIAKQR"></textarea>
+            <div class="chips">
+              <button class="chip" onclick="window.fillSample('dna')">🧬 DNA</button>
+              <button class="chip" onclick="window.fillSample('rna')">🔬 RNA</button>
+              <button class="chip" onclick="window.fillSample('protein')">🧪 PROTEIN</button>
+              <button class="chip" onclick="window.fillSample('calm')">🌿 CALM</button>
+            </div>
+          </div>
+          <div class="card">
+            <span class="clabel">🎛️ SOUND TEXTURE</span>
+            <div class="modes">
+              <button class="mbtn on" data-mode="pad" onclick="window.setMode(this)">✨ SOFT PAD</button>
+              <button class="mbtn" data-mode="bowl" onclick="window.setMode(this)">🔔 SINGING BOWL</button>
+              <button class="mbtn" data-mode="flute" onclick="window.setMode(this)">🎶 FLUTE</button>
+              <button class="mbtn" data-mode="harp" onclick="window.setMode(this)">🎼 HARP</button>
+            </div>
+          </div>
+          <div class="card">
+            <span class="clabel">🎚️ AUDIO CONTROLS</span>
+            <div class="sl-stack">
+              <div class="sl"><div class="sl-row"><strong>TEMPO</strong><span id="v-tempo">GENTLE</span></div><input type="range" id="sl-tempo" min="1" max="5" value="2" oninput="window.syncLabels()"></div>
+              <div class="sl"><div class="sl-row"><strong>REVERB</strong><span id="v-reverb">DEEP</span></div><input type="range" id="sl-reverb" min="0" max="4" value="3" oninput="window.syncLabels()"></div>
+              <div class="sl"><div class="sl-row"><strong>VOLUME</strong><span id="v-vol">MEDIUM</span></div><input type="range" id="sl-vol" min="0" max="10" value="6" oninput="window.syncLabels()"></div>
+              <div class="sl"><div class="sl-row"><strong>MUTATION</strong><span id="v-mut">OFF</span></div><input type="range" id="sl-mut" min="0" max="5" value="0" oninput="window.syncLabels()"></div>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-accent" id="btn-play" onclick="window.startPlay()"><span>▶️</span> BEGIN</button>
+              <button class="btn btn-red" id="btn-stop" onclick="window.stopPlay()" disabled><span>⏹️</span> STOP</button>
+              <button class="btn btn-dl" onclick="window.dlFullMelody()"><span>⬇️</span> WAV</button>
+            </div>
+          </div>
+          <div class="card">
+            <span class="clabel">🎹 NOTE MAP</span>
+            <div class="legend">
+              <div class="leg"><div class="ld" style="background:var(--A)"></div><strong>A</strong> — C4</div>
+              <div class="leg"><div class="ld" style="background:var(--U)"></div><strong>U</strong> — D4</div>
+              <div class="leg"><div class="ld" style="background:var(--T)"></div><strong>T</strong> — E4</div>
+              <div class="leg"><div class="ld" style="background:var(--G)"></div><strong>G</strong> — G4</div>
+              <div class="leg"><div class="ld" style="background:var(--C)"></div><strong>C</strong> — A4</div>
+              <div class="leg"><div class="ld" style="background:var(--aa)"></div><strong>AA</strong> — OCT+</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="padding:10px 12px">
+            <span class="clabel">📊 WAVEFORM</span>
+            <div class="wave-wrap" id="wave-wrap"></div>
+          </div>
+          <div class="card note-disp">
+            <div class="note-big" id="note-char">—</div>
+            <div class="note-info">
+              <div class="note-name" id="note-name">WAITING</div>
+              <div class="note-desc" id="note-desc">Enter sequence and press BEGIN</div>
+              <div class="note-pos" id="note-pos">POSITION —</div>
+            </div>
+            <div class="br" id="br"><div class="br-dot"></div></div>
+          </div>
+          <div class="prog"><div id="prog-fill"></div></div>
+          <div id="status">✨ READY · ENTER SEQUENCE AND PRESS BEGIN</div>
+          <div class="seq-wrap">
+            <div class="seq-label">🔍 SEQUENCE MAP</div>
+            <div id="seq-block"><div id="seq-tiles"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-downloads">
+        <div class="dl-grid">
+          <div class="dl-card">
+            <div class="dl-icon">🎵</div>
+            <div class="dl-title">FULL MELODY WAV</div>
+            <div class="dl-desc">Complete audio of your entire sequence with current sound texture and reverb.</div>
+            <button class="dl-btn dl-btn-wav" onclick="window.dlFullMelody()"><span>⬇️</span> DOWNLOAD WAV</button>
+          </div>
+          <div class="dl-card">
+            <div class="dl-icon">🧬</div>
+            <div class="dl-title">NUCLEOTIDE MELODY</div>
+            <div class="dl-desc">Only DNA/RNA base notes (A T G C U). Pure nucleotide music.</div>
+            <button class="dl-btn dl-btn-wav" onclick="window.dlNucleotideMelody()"><span>⬇️</span> DOWNLOAD WAV</button>
+          </div>
+          <div class="dl-card">
+            <div class="dl-icon">🔗</div>
+            <div class="dl-title">CODON HARMONY</div>
+            <div class="dl-desc">Groups sequence into codons (3-letter), plays each as a triad chord.</div>
+            <button class="dl-btn dl-btn-wav" onclick="window.dlCodonHarmony()"><span>⬇️</span> DOWNLOAD WAV</button>
+          </div>
+          <div class="dl-card">
+            <div class="dl-icon">📊</div>
+            <div class="dl-title">GC RHYTHM WAV</div>
+            <div class="dl-desc">GC bases on beat, AT/AU off-beat. Reflects GC composition.</div>
+            <button class="dl-btn dl-btn-wav" onclick="window.dlGCRhythm()"><span>⬇️</span> DOWNLOAD WAV</button>
+          </div>
+          <div class="dl-card">
+            <div class="dl-icon">🎹</div>
+            <div class="dl-title">MIDI FILE</div>
+            <div class="dl-desc">Standard MIDI file. Import into any DAW (Ableton, FL Studio).</div>
+            <button class="dl-btn dl-btn-mid" onclick="window.dlMIDI()"><span>⬇️</span> DOWNLOAD MIDI</button>
+          </div>
+          <div class="dl-card">
+            <div class="dl-icon">📈</div>
+            <div class="dl-title">CSV DATA</div>
+            <div class="dl-desc">CSV with each base, note, frequency, codon position and timing.</div>
+            <button class="dl-btn dl-btn-csv" onclick="window.dlCSV()"><span>⬇️</span> DOWNLOAD CSV</button>
+          </div>
+          <div class="dl-card">
+            <div class="dl-icon">🌈</div>
+            <div class="dl-title">SPECTROGRAM PNG</div>
+            <div class="dl-desc">Visual frequency-over-time spectrogram as color image.</div>
+            <button class="dl-btn dl-btn-png" onclick="window.dlSpectrogram()"><span>⬇️</span> DOWNLOAD PNG</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-compare">
+        <div class="cmp-inner">
+          <div class="two-col">
+            <div class="card">
+              <span class="clabel">🔬 SEQUENCE A</span>
+              <textarea id="cmp-a" placeholder="e.g. ATGCGATCG" style="height:90px"></textarea>
+            </div>
+            <div class="card">
+              <span class="clabel">🔬 SEQUENCE B</span>
+              <textarea id="cmp-b" placeholder="e.g. ATGCTATCG" style="height:90px"></textarea>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-accent" onclick="window.runCompare()"><span>🔄</span> COMPARE</button>
+            <button class="btn btn-accent" onclick="window.playCompareA()"><span>▶️</span> PLAY A</button>
+            <button class="btn btn-accent" onclick="window.playCompareB()"><span>▶️</span> PLAY B</button>
+            <button class="btn btn-red" onclick="window.stopPlay()"><span>⏹️</span> STOP</button>
+          </div>
+          <div class="score-grid" id="score-grid">
+            <div class="score-card"><div class="score-val" id="sc-pitch">—</div><div class="score-lbl">PITCH DISTANCE</div><div class="score-sub" id="sc-pitch-sub">semitones avg</div></div>
+            <div class="score-card"><div class="score-val" id="sc-rhythm">—</div><div class="score-lbl">RHYTHM DIFFERENCE</div><div class="score-sub" id="sc-rhythm-sub">GC ratio delta</div></div>
+            <div class="score-card"><div class="score-val" id="sc-melody">—</div><div class="score-lbl">MELODY SIMILARITY</div><div class="score-sub" id="sc-melody-sub">match %</div></div>
+          </div>
+          <div class="card">
+            <span class="clabel">📈 PITCH CONTOUR OVERLAY</span>
+            <canvas id="cmp-canvas"></canvas>
+          </div>
+          <div class="card">
+            <span class="clabel">🧬 MUTATION PROFILE</span>
+            <div class="mutation-wrap" id="mut-profile">
+              <div style="font-size:1rem;color:var(--muted);font-style:italic">Run comparison to see mutation profile</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p-autogen">
+        <div class="ag-inner">
+          <div class="card">
+            <span class="clabel">⚡ AUTO GENERATOR</span>
+            <div class="btn-row" style="margin-top:0">
+              <button class="btn btn-gen" onclick="window.autoSeq('dna')"><span>🧬</span> RANDOM DNA</button>
+              <button class="btn btn-gen" onclick="window.autoSeq('rna')"><span>🔬</span> RANDOM RNA</button>
+              <button class="btn btn-gen" onclick="window.autoSeq('protein')"><span>🧪</span> RANDOM PROTEIN</button>
+              <button class="btn btn-gen" onclick="window.autoSeq('gc_rich')"><span>⚛️</span> GC-RICH DNA</button>
+              <button class="btn btn-gen" onclick="window.autoSeq('at_rich')"><span>🧬</span> AT-RICH DNA</button>
+              <div class="sl" style="flex:1;min-width:160px">
+                <div class="sl-row"><strong>LENGTH</strong><span id="v-autolen">40</span></div>
+                <input type="range" id="sl-autolen" min="8" max="120" value="40" oninput="document.getElementById('v-autolen').textContent=this.value">
+              </div>
+            </div>
+          </div>
+
+          <div class="ag-grid">
+            <div class="ag-card">
+              <span class="clabel">🧬 GENERATED SEQUENCE</span>
+              <div class="ag-result" id="ag-seq">—</div>
+              <button class="btn btn-accent" onclick="window.useGenSeq()"><span>→</span> USE IN PLAYER</button>
+            </div>
+            <div class="ag-card">
+              <span class="clabel">🎵 AUTO MELODY</span>
+              <div class="ag-result" id="ag-melody">—</div>
+              <button class="btn btn-accent" onclick="window.playGenSeq()"><span>▶️</span> PLAY MELODY</button>
+            </div>
+            <div class="ag-card">
+              <span class="clabel">🎹 MIDI NOTES</span>
+              <div class="ag-result" id="ag-midi">—</div>
+              <button class="btn dl-btn-mid" onclick="window.dlGenMIDI()"><span>⬇️</span> DOWNLOAD MIDI</button>
+            </div>
+            <div class="ag-card">
+              <span class="clabel">📊 GC / AT RATIO</span>
+              <div class="ag-result" id="ag-stats">—</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <span class="clabel">🌈 SPECTROGRAM</span>
+            <canvas id="spec-canvas" height="180"></canvas>
+            <div class="btn-row" style="margin-top:12px">
+              <button class="btn dl-btn-png" onclick="window.dlSpecGen()"><span>⬇️</span> DOWNLOAD PNG</button>
+              <button class="btn btn-gen" onclick="window.renderSpecGen()"><span>↻</span> RENDER</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="sequence.js"></script>
+</body>
+</html>
