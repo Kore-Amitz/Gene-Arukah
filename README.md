@@ -8,7 +8,7 @@
 
 ## 🎯 Overview
 
-Gene Arukah is a **web-based bioinformatics audio tool** that transforms DNA, RNA, and protein sequences into therapeutic melodies. Users can:
+Gene Arukah is a **web-based bioinformatics audio tool** that transforms DNA, RNA, and protein sequences into melodies. Users can:
 
 - 🧪 Enter any genetic sequence (DNA/RNA/Protein)
 - 🎵 Listen to real-time sonification with multiple sound textures
