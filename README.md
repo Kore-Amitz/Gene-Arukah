@@ -78,8 +78,13 @@ As this is an ongoing research project, contributions are welcome in:
 ## 📄 License
 This project is licensed under the MIT License – see the LICENSE file for details.
 
+## 📝 Citation
+
+Md. Ismiel Hossen Abir. (2026). Gene Arukah (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19056898
+
 ## 📬 Contact
 For collaboration, questions, or feedback:
 - Email: ismielabir286@gmail.com
 - GitHub: @ismielabir
 - LinkedIn: https://www.linkedin.com/in/md-ismiel-hossen-abir/
+
