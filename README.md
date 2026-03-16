@@ -47,3 +47,10 @@ The project is in active development and intended for **research purposes only**
 - HTML5, CSS3, Vanilla JavaScript
 
 ---
+
+## 🔗 Use the Tool Online
+
+You can use the web-based tool directly here:  
+[https://kore-amitz.github.io/Gene-Arukah/](https://kore-amitz.github.io/Gene-Arukah/)
+
+---
