@@ -2,7 +2,7 @@
 
 **Genetic Melody**
 
-![Gene Arukah Interface](https://raw.githubusercontent.com/Kore-Amitz/Gene-Arukah/main/sample_img.PNG)
+![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
 
 ---
 
