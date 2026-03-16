@@ -2,6 +2,8 @@
 
 **Genetic Melody**
 
+![Gene Arukah Interface](https://raw.githubusercontent.com/Kore-Amitz/Gene-Arukah/main/sample_img.PNG)
+
 ---
 
 ## 🎯 Overview
