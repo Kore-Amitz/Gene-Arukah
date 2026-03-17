@@ -2,8 +2,6 @@
 
 **Genetic Melody**
 
-![GitHub Visitors](https://visitor-badge.laobi.icu/badge?page_id=Kore-Amitz.Gene-Arukah)
-![Website Visitors](https://visitor-badge.laobi.icu/badge?page_id=Kore-Amitz.Gene-Arukah.website)
 
 
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
