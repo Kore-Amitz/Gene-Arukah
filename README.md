@@ -2,8 +2,6 @@
 
 **Genetic Melody**
 
-![Visitors](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Kore-Amitz/Gene-Arukah)
-
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
 
 ---
