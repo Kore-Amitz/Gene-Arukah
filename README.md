@@ -2,13 +2,7 @@
 
 **Genetic Melody**
 
-
-## 📊 Visitor Statistics
-
-| Platform | Today / Total Visitors |
-|----------|------------------------|
-| **GitHub Repository** | ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FKore-Amitz%2FGene-Arukah&count_bg=%23263759&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=visitors&edge_flat=false) |
-| **Live Website** | ![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkore-amitz.github.io%2FGene-Arukah%2F&count_bg=%23263759&title_bg=%23555555&icon=chrome.svg&icon_color=%23E7E7E7&title=visitors&edge_flat=false) |
+![Visitors](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Kore-Amitz/Gene-Arukah)
 
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
 
