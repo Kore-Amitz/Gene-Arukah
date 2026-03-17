@@ -2,6 +2,9 @@
 
 **Genetic Melody**
 
+![GitHub watchers](https://img.shields.io/github/watchers/Kore-Amitz/Gene-Arukah)
+
+
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
 
 ---
