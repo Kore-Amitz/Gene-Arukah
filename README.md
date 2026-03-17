@@ -5,9 +5,7 @@
 <div align="center">
   
   [![GitHub Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FKore-Amitz%2FGene-Arukah&label=GitHub%20Visitors&countColor=%23263759)](https://github.com/Kore-Amitz/Gene-Arukah)
-  [![Website Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fkore-amitz.github.io%2FGene-Arukah%2F&label=Website%20Visitors&countColor=%23263759)](https://kore-amitz.github.io/Gene-Arukah/)
-  [![GitHub stars](https://img.shields.io/github/stars/Kore-Amitz/Gene-Arukah?style=social)](https://github.com/Kore-Amitz/Gene-Arukah/stargazers)
-  
+  [![Website Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fkore-amitz.github.io%2FGene-Arukah%2F&label=Website%20Visitors&countColor=%23263759)](https://kore-amitz.github.io/Gene-Arukah/)  
 </div>
 
 
