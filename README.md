@@ -2,7 +2,7 @@
 
 **Genetic Melody**
 
-![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkore-amitz.github.io%2FGene-Arukah%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors+%28Daily%2FTotal%29&edge_flat=false)
+[![Page Views](https://img.shields.io/badge/dynamic/json?label=Visitors&query=count&url=https%3A%2F%2Fgene-arukah.goatcounter.com%2Fcounter%2F%3Fstart%3D2024-01-01.json)](https://gene-arukah.goatcounter.com)
 
 
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
