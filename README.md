@@ -2,7 +2,17 @@
 
 **Genetic Melody**
 
+![Static Badge](https://img.shields.io/badge/Project-Gene_Arukah-blue)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Kore-Amitz/Gene-Arukah)
+![GitHub code size](https://img.shields.io/github/languages/code-size/Kore-Amitz/Gene-Arukah)
+![GitHub contributors](https://img.shields.io/github/contributors/Kore-Amitz/Gene-Arukah)
+![GitHub downloads](https://img.shields.io/github/downloads/Kore-Amitz/Gene-Arukah/total)
+![Profile views](https://komarev.com/ghpvc/?username=Kore-Amitz)
+![Views](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FKore-Amitz%2FGene-Arukah)
+![Website visits](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fkore-amitz.github.io%2FGene-Arukah%2F)
+![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19056898-blue)
+
+
 
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
 
