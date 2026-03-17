@@ -10,13 +10,6 @@
   
 </div>
 
-## 📊 Project Stats
-
-- **GitHub Repository Views:** ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FKore-Amitz%2FGene-Arukah&label=Views&countColor=%23263759)
-- **Live Tool Views:** ![Website Views](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fkore-amitz.github.io%2FGene-Arukah%2F&label=Views&countColor=%23263759)
-
-[Live Tool](https://kore-amitz.github.io/Gene-Arukah/)
-
 
 ![Gene Arukah Interface](https://github.com/Kore-Amitz/Gene-Arukah/blob/main/sample_img.PNG)
 
